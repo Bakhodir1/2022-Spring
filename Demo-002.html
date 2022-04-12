@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>DAT101 Section 002</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style002.css">       
     </head>
     <body>
         <h2 id="top"><a href="#bottom">Go to bottom</a></h2>
@@ -39,43 +40,46 @@
         <hr>
         <div>
             <form>
-                <input type="text" size="200" placeholder="Please type something here!!!!"><br><br>
-                <input type="button" value="The Login Button" onclick="alert('Login Successful')"><br><br>
-                <button type="button">Submit</button>
-                <br>
-                <h3>Please enter your email address: <span><input type="email"></span></h3>
-                <h3>Please enter your password: <span><input type="password"></span></h3>
-                <br>
-                <h3>What did you have for breakfast? </h3>
-                <input type="radio" id="bkf01" name="breakfast">
-                <label for="bkf01">Cereal</label><br>
-                <input type="radio" id="bkf02" name="breakfast">
-                <label for="bkf02">Eggs</label><br>
-                <input type="radio" id="bkf03" name="breakfast">
-                <label for="bkf03">Milk</label><br>
-                <br>
+                <fieldset>
+                    <legend><h3>Below are various types of user inputs:</h3></legend>
 
-                <h3>What will you have for lunch?</h3>
-                <input type="checkbox"><label>Sandwich</label><br>
-                <input type="checkbox"><label>Gimbap</label><br>
-                <input type="checkbox"><label>Noodles</label><br>    
-                <input type="checkbox"><label>Beer</label><br>
-                <br>
-                <input type="submit" value="Submit">
-                <br>
-                <h3>Please leave your comments below:</h3>
-                <textarea rows="10" cols="100"></textarea>
-                <br>
-                <h3> How do you rate the webpage? </h3>
+                    <input type="text" size="200" placeholder="Please type something here!!!!"><br><br>
+                    <input type="button" value="The Login Button" onclick="alert('Login Successful')"><br><br>
+                    <button type="button">Submit</button>
+                    <br>
+                    <h3>Please enter your email address: <span><input type="email"></span></h3>
+                    <h3>Please enter your password: <span><input type="password"></span></h3>
+                    <br>
+                    <h3>What did you have for breakfast? </h3>
+                    <input type="radio" id="bkf01" name="breakfast">
+                    <label for="bkf01">Cereal</label><br>
+                    <input type="radio" id="bkf02" name="breakfast">
+                    <label for="bkf02">Eggs</label><br>
+                    <input type="radio" id="bkf03" name="breakfast">
+                    <label for="bkf03">Milk</label><br>
+                    <br>
 
-                <select style="text-align: center; font-size: large;">
-                    <option value="a" selected>Choose below</option>
-                    <option value="b">Brillant!</option>
-                    <option value="c">Pretty alright</option>
-                    <option value="d">So-so</option>
-                    <option value="e">Useless!</option>
-                </select>
-                
+                    <h3>What will you have for lunch?</h3>
+                    <input type="checkbox"><label>Sandwich</label><br>
+                    <input type="checkbox"><label>Gimbap</label><br>
+                    <input type="checkbox"><label>Noodles</label><br>    
+                    <input type="checkbox"><label>Beer</label><br>
+                    <br>
+                    <input type="submit" value="Submit">
+                    <br>
+                    <h3>Please leave your comments below:</h3>
+                    <textarea rows="10" cols="100"></textarea>
+                    <br>
+                    <h3> How do you rate the webpage? </h3>
+
+                    <select style="text-align: center; font-size: large;">
+                        <option value="a" selected>Choose below</option>
+                        <option value="b">Brillant!</option>
+                        <option value="c">Pretty alright</option>
+                        <option value="d">So-so</option>
+                        <option value="e">Useless!</option>
+                    </select>
+                </fieldset>
             </form>
         </div>
         <hr>
