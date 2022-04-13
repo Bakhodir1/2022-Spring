@@ -23,7 +23,15 @@ a:visited {
     text-decoration: none;
 }
 
+form {
+    padding-left: 20%;
+}
+
 fieldset {
-    border-color: red;
-    border-width: 5px;
+    width: fit-content;
+    border: 10px solid red;
+}
+
+#demo001 {
+    text-align: center;
 }
