@@ -11,27 +11,15 @@ h1 {
     padding: 10px;
 }
 
-h3 {
-    color: blueviolet;
-}
+h3 {color: blueviolet;}
 
-a:link {
-    text-decoration: none;
-}
+a:link {text-decoration: none;}
 
-a:visited {
-    text-decoration: none;
-}
+a:visited {text-decoration: none;}
 
-form {
-    padding-left: 20%;
-}
+form {padding-left: 20%;}
 
 fieldset {
     width: fit-content;
     border: 10px solid red;
-}
-
-#demo001 {
-    text-align: center;
 }

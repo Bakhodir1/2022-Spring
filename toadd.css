@@ -1,11 +1,186 @@
-    /*
-    for h1
+/*
+body {
+    margin-left: 180px;
+    padding: 30px;
+    
+    background-image: url(Pics/Fruits02.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
+}
+
+h1 {
     margin-left: 20%;
     padding-right: 40%;
     border: 10px solid darkblue;
     border-bottom: 20px double red;
     border-right: 30px groove green;
     border-top: 40px dotted yellow;
+}
 
-    
-    */
+a:hover {color: deeppink; background-color: none; text-decoration: none;}
+
+iframe, pictures {display: block; margin-left: auto; margin-right: auto;}
+
+button {border-style: groove; color: black; padding: 2px; text-align: center;}
+
+button:hover {background-color: chartreuse;}
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+TOP NAVIGATION BAR + TRANSITION
+
+        <div>
+            <nav id="nav01">
+                <ul id="nav02">
+                    <li class="nav03"><a href="#nav01">Home</a></li>
+                    <li class="nav03"><a href="#bottom">Bottom</a></li>
+                    <li class="nav03"><a href="url">Webpage2</a></li>
+                    <li class="nav03"><a href="url">Webpage3</a></li>
+                </ul>
+            </nav>
+        <div>
+
+#nav01 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    position: fixed;
+    top: 0;
+    left: 33%;    
+}
+
+#nav02 {
+    list-style-type: none;    
+    padding: 0%;
+    overflow: hidden;
+    background-color: floralwhite;
+    border-radius: 30px;
+}
+
+.nav03 {float: left;}
+
+.nav03 a {display: inline-block; padding: 16px 16px; text-decoration: none; font-weight: 600;}
+
+.nav03 a:hover {
+    background-color: black; 
+    color: floralwhite; 
+    padding: 10px 10px;
+    transform: rotate(15deg);
+    border-radius: 30px;
+}
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+SIDE NAVIGATION BAR
+<nav id="snav" style="padding-left: 10px;">
+    <img id="fologo" src="Pics/flogo.jpg">
+    <br>
+    <a href="#">Home</a>
+    <a href="#last">Bottom</a>
+    <a href="FATMAN2.html">Fatman 2</a>
+    <a href="FATMAN3.html">Fatman 3</a>
+    <a href="#">Information</a>
+</nav>
+
+#snav {
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 160px;
+    background-color: rgba(0, 100, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: darkslateblue;
+    text-transform: uppercase;
+    line-height: 40px;
+    border-style: double;
+    border-spacing: 10px;
+    border-color: darkgreen;
+}
+
+#snav:hover {color: red; text-decoration: none;}
+#fologo {display: block; width: 90%;}
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+THREE PICTURES IN A ROW
+#pic01 {margin: auto; padding: 1%; float: left;}
+#pic02 {margin: auto; padding: 1%; float: right;}
+#pic03 {margin: auto; padding: 1%;}
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+<h2>FOUR IMAGES: SIDE BY SIDE</h2>
+        <div class="fcontainer">
+            <div class="frame">
+                <img class="fpics" src="Pics/image001.png" alt="Image001">
+                <h3 style="text-align: center; font-style: italic;"> Image 1 </h3>
+            </div>
+            <div class="frame">
+                <img class="fpics" src="Pics/image002.png" alt="image002">
+                <h3 style="text-align: center; font-style: italic;"> Image 2 </h3>
+            </div>
+            <div class="frame">
+                <img class="fpics" src="Pics/Image003.png" alt="Image003">
+                <h3 style="text-align: center; font-style: italic;"> Image 3 </h3>
+            </div>
+            <div class="frame">
+                <img class="fpics" src="Pics/Image004.png" alt="Image004">
+                <h3 style="text-align: center; font-style: italic;"> Image 4 </h3>
+            </div>
+        </div>
+
+
+.fcontainer::after {display: table; content: ""; clear: both;}
+
+.frame {
+    float: left;
+    width: 21.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    border: 1px solid;
+    padding: 1%;
+} /* (21.5+0.5+0.5+1+1)=24.5x4=98% + 1px border
+
+.fpics {width: 100%; margin-top: 1%;}
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+CSS TRANSITIONS+TRANSFORMATION
+1. Setting the changing property and speed
+Example:
+element {transition: width 2s, height 2s, transform 2s;}
+
+2. Setting the new destinated property values
+element:hover {width: 100px; height: 100px; transform: rotate(20deg);}
+
+
+TRANSITION EASE-IN-OUT
+#test01 {
+    text-align: center;
+    color: palevioletred;
+    background-color: floralwhite;
+    margin-left: 44%;
+    margin-right: 44%;
+    border-radius: 30px;
+    font-size: 40px;
+    transition: font-size 0.8s;
+    transition-timing-function: ease-in-out;
+}
+  
+#test01:hover {font-size: 60px;}
+------------------------------------------------------------------------------------
+*/

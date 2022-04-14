@@ -1,33 +1,21 @@
 body {
     background-color:bisque;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /*
+
+    */
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+h3, h4, h5, h6 {color: brown;}
 
-h1 {
-    text-align: center;
-    font-size: 120px;
+h1 {text-align: center; font-size: 100px;}
 
-}
+a {color: black; text-decoration: none;}
 
-h3 {
-    color: brown;
-}
+a:link {text-decoration: none;}
 
-a:link {
-    text-decoration: none;
-}
+a:visited {text-decoration: none;}
 
-a:visited {
-    text-decoration: none;
-}
+form {width: fit-content;}
 
-form {
-    width: fit-content;
-}
-
-fieldset {
-    border: 10px double rebeccapurple;
-}
+fieldset {border: 10px double rebeccapurple;}
