@@ -58,7 +58,7 @@ TOP NAVIGATION BAR + TRANSITION
     padding: 0%;
     overflow: hidden;
     background-color: floralwhite;
-    border-radius: 30px;
+    border-radius: 50%;
 }
 
 .nav03 {float: left;}
