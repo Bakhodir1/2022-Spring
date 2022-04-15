@@ -177,6 +177,7 @@ TRANSITION EASE-IN-OUT
     margin-right: 44%;
     border-radius: 30px;
     font-size: 40px;
+    
     transition: font-size 0.8s;
     transition-timing-function: ease-in-out;
 }
