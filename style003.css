@@ -1,15 +1,46 @@
-body {background-color: antiquewhite;}
+body {
+    background-color: antiquewhite;
+    /*
+    font-family: Arial, Helvetica, sans-serif;
+    */
+}
 
-h1 {text-align: center;}
+h1 {
+    text-align: center;
+    /*
+    font-size: 100px;
+    margin: 20px;
+    border: solid royalblue;
+    padding: 10px;
+    */
+}
 
-h3 {color: blue;}
+/*BORDER PATTERN GROOVE BY DEFAULT*/
+
+/* h3, h4, h5, h6 {color: indianred;} */
 
 h1, h2, h3, h4, h5, h6, p {
     font-family: helvetica;
-    text-align: center;
 }
 
+/*
+a {color: black; text-decoration: none;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+*/
+
 fieldset {
+    /*
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    */
+
+
     border-color: red;
     border-width: 5px;
+
+
+    /* border: 8px dotted dodgerblue; */
 }
