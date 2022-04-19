@@ -1,6 +1,12 @@
 body {
     background-color:bisque;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(Pics/Fruits03.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;    
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
 }
 
 h1 {
