@@ -49,11 +49,11 @@ TOP NAVIGATION BAR + TRANSITION
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
-    /*
+    
     position: fixed;
     top: 10;
     left: 33%;
-    */ 
+
 }
 
 #nav02 {
