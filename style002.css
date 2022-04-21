@@ -12,9 +12,56 @@ body {
 h1 {
     text-align: center;
     font-size: 100px;
-    border: 8px solid rebeccapurple;
+    margin-left: 20%;
+    padding-right: 40%;
+    border: 10px solid rebeccapurple;
     margin: 20px;
     padding: 10px;
+}
+
+#demo00 {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#nav01 {
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /*
+    position: fixed;
+    top: 10;
+    left: 33%;
+    */
+}
+
+#nav02 {
+    list-style-type: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden;
+    background-color: floralwhite;
+    border-radius: 35px;
+}
+
+.nav03 {float: left;}
+
+.nav03 a {
+    display: inline-block;
+    padding: 16px 16px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav03 a:hover {
+    background-color: black;
+    color: floralwhite;
+    padding: 10px 10px;
+    transform: rotate(15deg);
+    border-radius: 30px;
 }
 
 /*BORDER PATTERN GROOVE BY DEFAULT*/
