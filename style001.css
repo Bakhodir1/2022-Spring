@@ -1,12 +1,15 @@
 body{
-    background-color: blanchedalmond;
+    /*background-color: blanchedalmond;*/
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    /*
     background-image: url(Pics/Fruits02.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.7);
     background-blend-mode: lighten;
+    */
 }
 
 h1 {
@@ -90,7 +93,6 @@ fieldset {
     border: 6px dashed red;
 }
 
-/*
 .demo03 li{
     width: 100%;
     height: 100%;
@@ -104,8 +106,8 @@ fieldset {
     background-color: rgba(255, 255, 255, 0.7);
     background-blend-mode: lighten;
 
-    opacity: 0;
     z-index: -1;
+    opacity: 0;
 
     animation-name: pFade;
     animation-duration: 60s;
@@ -135,9 +137,7 @@ fieldset {
     25% {opacity: 0}
     100% {opacity: 0}
 }
-*/
 
-/*
 #demo04 {text-align: center;}
 
 .demo05 {
@@ -145,27 +145,22 @@ fieldset {
     height: 120px;
     display: inline;
 }
-*/
 
-/*
 .demo06 {
     width: 160px;
     height: 120px;
     display: block;
 
+    float: left;
     border: 1px solid black;
     margin-left: 2%;
     margin-right: 2%;
-    float: left;
 }
-*/
 
-/*
 .demo07 {
     width: 160px;
     height: 120px;
     display: block;
-
     border: 1px solid black;
     margin-left: 2%;
     margin-right: 2%;
@@ -174,9 +169,7 @@ fieldset {
 #demo07pic1 {float: left;}
 #demo07pic2 {float: right;}
 #demo07pic3 {margin: auto;}
-*/
 
-/*
 .demo08 {
     width: 160px;
     height: 120px;
@@ -187,7 +180,6 @@ fieldset {
     margin-right: 2%;
 
     float: left;
-    position: absolute; 
+    position: absolute;
 }
-*/
-/*absolute; static; fixed; sticky*/
+/*relative; absolute; static; fixed; sticky*/
