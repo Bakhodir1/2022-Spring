@@ -7,27 +7,27 @@
     </head>
     <body>
         <div>
-            <h2>window.alert() or alert() - Script</h2>
+            <h2>1) window.alert() or alert() - Script</h2>
             <button type="button" onclick='alert("This is a window alert.");'>Example 1</button>
         </div>
         <br>
         <hr>
         <div>
-            <h2>window.alert() or alert() - Arithmetic Operation</h2>
+            <h2>2) window.alert() or alert() - Arithmetic Operation</h2>
             <p>77 + 48 =</p>
             <button type="button" onclick='alert(77+48);'>Example 2</button>
         </div>
         <br>
         <hr>
         <div>
-            <h2>document.write() - Script</h2>
+            <h2>3) document.write() - Script</h2>
             <p>New information to override ALL existing page content.</p>
-            <button type="button" onclick='document.write("<h1>This is a <strong>document.write</strong></h1>")'>Example 3</button>
+            <button type="button" onclick='document.write("<h1>This is a <strong>document.write</strong></h1>");'>Example 3</button>
         </div>
         <br>
         <hr>
         <div>
-            <h2>document.write() - Arithmetic Operation</h2>
+            <h2>4) document.write() - Arithmetic Operation</h2>
             <p>New information to override ALL existing page content.</p>
             <p>100 + 44 =</p>
             <button type="button" onclick='document.write(100+44);'>Example 4</button>
@@ -35,11 +35,77 @@
         <br>
         <hr>
         <div>
-            <h2>innerHTML [Modifying/Writing into an HTML element] - Script</h2>
+            <h2>5) innerHTML [Modifying/Writing into an HTML element] - Script</h2>
             <h3 id="demo10">This sentence will be changed.</h3>
-            <button type="button" onclick='document.getElementById("demo10").innerHTML = "This is a new sentence."'> Example 5</button>
+            <button type="button" onclick='document.getElementById("demo10").innerHTML = "This is a new sentence.";'> Example 5</button>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>6) innerHTML [Modifying/Writing into an HTML element] - new Date() [Current date & Time]</h2>
+            <h3 id="demo11"></h3>
+            <button type="button" onclick='document.getElementById("demo11").innerHTML = new Date();'> Example 6</button>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>7) innerHTML [Modifying/Writing into an HTML element] - Arithmetic Operation + Event</h2>
+            <h3>45 x 3 = <span id="demo12">???</span></h3>
+            <button type="button" onclick='f01()'> Example 7</button>
+            <script>
+                function f01() {
+                    let x = 45;
+                    let y = 3;
+                    let z = x * y;
+                    document.getElementById("demo12").innerHTML = z;
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>8) console.log() [Writing into the browser console]</h2>
+            <p>Output information (print text) to the JavaScript browser console (press F12).</p>
+            <p>Example: Arithmetic operation --> 47.864 divided by 3.724</p>
+            <button type="button" onclick='console.log(47.864 / 3.724);'> Example 8</button>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>9) confirm() + Event</h2>
+            <h3 id="demo13"></h3>
+            <button type="button" onclick='f02()'> Example 9</button>
+            <script>
+                function f02() {
+                    let reply;
+                    if (confirm("Press to confirm!")) {
+                        reply = "CONFIRMED!";
+                    } else {
+                        reply = "CANCEL!";
+                    }
+                    document.getElementById("demo13").innerHTML = reply;
+				}
+            </script>
+            <p>*Challenge: You can try anchoring or linking the confirm message to an URL</p>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>10) prompt() + Event</h2>
+            <h3 id="demo14"></h3>
+            <button type="button" onclick='f03()'> Example 10</button>
+            <script>
+                function f03() {
+                    let person = prompt("Please enter your name:");
+                    text = "Hello " + person + "! What did you have for lunch?";
+                    document.getElementById("demo14").innerHTML = text;
+                }
+            </script>
         </div>
         <br>
         <hr>
     </body>
 </html>
+
+<!--
+-->
