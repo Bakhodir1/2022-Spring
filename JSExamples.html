@@ -4,8 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JavaScript Examples</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
+        <header>
+            <h1 style="text-align:center">JavaScript Examples</h1>
+            <p>Delivery method: DOM Event - onclick + button (See DEV279x module 3)</p>
+        </header>
+        <hr>
         <div>
             <h2>1) window.alert() or alert() - Script</h2>
             <button type="button" onclick='alert("This is a window alert.");'>Example 1</button>
@@ -50,7 +56,7 @@
         <hr>
         <div>
             <h2>7) innerHTML [Modifying/Writing into an HTML element] - Arithmetic Operation + Event</h2>
-            <h3>45 x 3 = <span id="demo12">???</span></h3>
+            <h3>45 x 3 = <span id="demo12" style="color:red;"></span></h3>
             <button type="button" onclick='f01()'> Example 7</button>
             <script>
                 function f01() {
@@ -72,7 +78,7 @@
         <br>
         <hr>
         <div>
-            <h2>9) confirm() + Event</h2>
+            <h2>9) confirm() </h2>
             <h3 id="demo13"></h3>
             <button type="button" onclick='f02()'> Example 9</button>
             <script>
@@ -91,9 +97,9 @@
         <br>
         <hr>
         <div>
-            <h2>10) prompt() + Event</h2>
+            <h2>10) prompt() </h2>
             <h3 id="demo14"></h3>
-            <button type="button" onclick='f03()'> Example 10</button>
+            <button type="button" onclick='f03()'> Example 10 </button>
             <script>
                 function f03() {
                     let person = prompt("Please enter your name:");
@@ -104,8 +110,138 @@
         </div>
         <br>
         <hr>
+        <div>
+            <h2 style="margin-bottom: 0px;">11) .src (HTML attribute) </h2>
+            <img id="demo15" src="Pics/image001.png">
+            <br>
+            <button type="button" onclick='document.getElementById("demo15").src="Pics/image001.png"'> Example 11.1 </button>
+            <button type="button" onclick='document.getElementById("demo15").src="Pics/image002.png"'> Example 11.2 </button>
+            <button type="button" onclick='document.getElementById("demo15").src="Pics/image003.png"'> Example 11.3 </button>
+            <style>
+                #demo15 {width: 160px; height: 120px; position: relative; left: 70px;}
+            </style>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>12) .style (single CSS style change) </h2>
+            <p id="demo16">Click below to change the font size of this sentence.</p>
+            <button type="button" onclick='document.getElementById("demo16").style.fontSize="30px"'> Example 12 </button>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>13) .style (multiple CSS style changes) </h2>
+            <p id="demo17">Setting multiple changes with a function.</p>
+            <button type="button" onclick='f04()'> Example 13 </button>
+            <script>
+                function f04() {
+                    document.getElementById("demo17").style.fontSize="40px";
+                    document.getElementById("demo17").style.color="red";
+                    document.getElementById("demo17").style.fontFamily="Helvetica";
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>14) .style.cssText (multiple CSS style changes) </h2>
+            <p id="demo18">Setting multiple changes with style.cssText.</p>
+            <button type="button" onclick='document.getElementById("demo18").style.cssText="font-size:50px; color:blue; background-color:bisque;"'> Example 14 </button>
+        </div>
+        <br>
+        <h4>*Note: There are several different ways to set multiple CSS changes.</h4>
+        <hr>
+        <div>
+            <h2>15) .style.display (CSS display property) </h2>
+            <h3 id="demo19">Click below to make this sentence disappear.</h3>
+            <button type="button" onclick='document.getElementById("demo19").style.display="none"'> Example 15 </button>
+        </div>
+        <br>
+        <p>*Note: Examples of CSS display property value types include block, inline, flex, list-item, table, etc.</p>
+        <hr>
+        <div>
+            <h2>16) boolean() </h2>
+            <p>Click below to display the true/false value of 49 < 36</p>
+            <h3 id="demo20"></h3>            
+            <button type="button" onclick='document.getElementById("demo20").innerHTML= Boolean(49<36);'> Example 16 </button>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>17) Comparison using variable + typeof </h2>
+            <p>Value one = 44. Value two = 76</p>
+            <p>Is value one lesser than value two? <span id="demo21" style="color:red;"></span></p>
+            <p>What is the type of data for value one? <span id="demo22" style="color:red;"></span></p>
+            <p>What is the type of data for "c" (see the JavaScript code)? <span id="demo23" style="color:red;"></span></p>
+            <button type="button" onclick='f05()'> Example 17 </button>
+            <script>
+                function f05() {
+                    let a = 44;
+                    let b = 76;
+                    let c = a < b;
+                    document.getElementById("demo21").innerHTML= c;
+                    document.getElementById("demo22").innerHTML= typeof a;
+                    document.getElementById("demo23").innerHTML= typeof c;
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>18) Conditional - if statement </h2>
+            <p>Click below to display 'Good Evening' if the time is after 6pm. No greeting will be displayed if the time is before 6pm.</p>
+            <h3 id="demo24" style="color:blue;"></h3>            
+            <button type="button" onclick='f06()'> Example 18 </button>
+            <script>
+                function f06() {
+                    if (new Date().getHours() > 18) {
+                        document.getElementById("demo24").innerHTML = "Good Evening";
+                    }
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>19) Conditional - if and else statements </h2>
+            <p>Click below to display 'Good day' if the time is before 6pm. The display will show 'Good evening' if the time is after 6pm.</p>
+            <h3 id="demo25" style="color:blue;"></h3>            
+            <button type="button" onclick='f07()'> Example 19 </button>
+            <script>
+                function f07() {
+                    if (new Date().getHours() < 18) {
+                        document.getElementById("demo25").innerHTML = "Good day";
+                    } else {
+                        document.getElementById("demo25").innerHTML = "Good evening";
+                    }
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h2>20) Conditional - if, else if and else statements </h2>
+            <p>Click below to display 'Good morning' if the time is before 12pm. The display will show "Good afternoon' if the time is between 12pm and 6 pm or 'Good evening' if the time is after 6pm.</p>
+            <h3 id="demo26" style="color:blue;"></h3>            
+            <button type="button" onclick='f08()'> Example 20 </button>
+            <script>
+                function f08() {
+                    if (new Date().getHours() < 12) {
+                        document.getElementById("demo26").innerHTML = "Good morning";
+                    } else if (new Date().getHours() < 18) {
+                        document.getElementById("demo26").innerHTML = "Good afternoon";
+                    } else {
+                        document.getElementById("demo26").innerHTML = "Good evening";
+                    }
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
     </body>
 </html>
 
 <!--
+
 -->

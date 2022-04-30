@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Examples 2</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align:center">JavaScript Examples 2</h1>
+            <p>Delivery method: DOM Event - onclick + button (See DEV279x module 3)</p>
+        </header>
+        <hr>
+        <div>
+            <h2>21) Conditional - if, else if and else statements + prompt()</h2>
+            <p>Please enter either '1' or '2' upon clicking the button below.</p>
+            <h3 id="demo27" style="color:blueviolet;"></h3>            
+            <button type="button" onclick='f09()'> Example 21 </button>
+            <script>
+                function f09() {
+                    let a = prompt ("Please enter either '1' or '2':");
+                    if (a == 1) {
+                        document.getElementById("demo27").innerHTML = a + " is an odd number.";
+                    } else if (a == 2) {
+                        document.getElementById("demo27").innerHTML = a + " is an even number.";
+                    } else {
+                        document.getElementById("demo27").innerHTML = "Error! Try again.";
+                    }
+                }
+            </script>
+        </div>
+        <br>
+        <hr>
+    </body>
+</html>
+
+<!--
+
+-->
