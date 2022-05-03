@@ -109,27 +109,111 @@
         <hr>
 
         <div>
-            <h2>xx) Radio input + Arithmetic Operation </h2>
+            <h2>xx) ADVANCED TEST </h2>
             <p>Place your orders:</p>
-            <input id="demo33" type="checkbox" value="2000"><label>Item A - 2,000 Won</label><br>
-            <input id="demo34" type="checkbox" value="4000"><label>Item B - 4,000 Won</label><br>
-            <input type="checkbox"><label>Item C - 6,000 Won</label><br>
+            <input name="demo33" type="checkbox" value="2000" onclick="f13()"><label>Item A - 2,000 Won</label><br>
+            <input name="demo33" type="checkbox" value="4000" onclick="f13()"><label>Item B - 4,000 Won</label><br>
+            <input name="demo33" type="checkbox" value="6000" onclick="f13()"><label>Item C - 6,000 Won</label><br>
             <input type="checkbox"><label>Item D - 8,000 Won</label><br>
             <input type="checkbox"><label>Item E - 10,000 Won</label><br>
             <input type="checkbox"><label>Item F - 12,000 Won</label><br>
             <br>
-            <button type="button" onclick='f13()'> Total Price </button>
-            <h3 id="demo101" style="color:blueviolet;"></h3>
+            <!--<button type="button" onclick='f13()'> Test A </button>-->
+            <!-- <h3 id="demo101" style="color:blueviolet;"></h3> -->
+            <input readonly="readonly" type="text" name="demo101">
             
             <script>
                 function f13() {
-                    let a = document.getElementById("demo33").value;
-                    let b = document.getElementById("demo34").value;
-                    const sum = a + b;
-                    document.getElementById("demo101").innerHTML = sum;
+                    var cboxes = document.getElementsByName("demo33");
+                    var sum = 0;
+                    for (var a = 0; a < cboxes.length; a++) {
+                        if (cboxes[a].checked) {
+                            sum += parseFloat(cboxes[a].value);
+                        }
+                    }
+                    document.getElementById("demo101")[0].value = sum;
                 }
+                //https://stackoverflow.com/questions/47582330/javascript-checkbox-sum
             </script>
         </div>
+
+        <!--
+        <div>
+            <h2>xx) ADVANCED: Radio input + Arithmetic Operation </h2>
+            <p>Place your orders:</p>
+            <input class="demo33" type="checkbox" value="2000"><label>Item A - 2,000 Won</label><br>
+            <input class="demo33" type="checkbox" value="4000"><label>Item B - 4,000 Won</label><br>
+            <input class="demo33" type="checkbox" value="6000"><label>Item C - 6,000 Won</label><br>
+            <input type="checkbox"><label>Item D - 8,000 Won</label><br>
+            <input type="checkbox"><label>Item E - 10,000 Won</label><br>
+            <input type="checkbox"><label>Item F - 12,000 Won</label><br>
+            <br>
+            <button type="button" onclick='f13()'> Test A </button>
+            <h3 id="demo101" style="color:blueviolet;"></h3>
+            <button type="button" onclick='f14()'> Test B </button>
+            <h3 id="demo102" style="color:blueviolet;"></h3>
+        
+            <script>
+                function f13() {
+                    parseInt(document.querySelector('.demo33:checked').value);
+                    const arrayA = [];
+                    var cboxes = document.querySelectorAll('input[type=checkbox]:checked')
+                    for (var a = 0; a < cboxes.length; a++) {
+                        arrayA.push(cboxes[a].value)
+                    }
+                    document.getElementById("demo101").innerHTML = arrayA;
+                }
+
+
+
+
+
+                    //let a = parseInt(document.querySelector('#demo33:checked').value);
+                    //let b = parseInt(document.querySelector('#demo34:checked').value);
+                    //let c = parseInt(document.querySelector('#demo35:checked').value);
+                    //let a = document.querySelector('#demo33:checked').value;
+                    //let a = parseInt(document.getElementById("demo33").value);
+                    //let b = parseInt(document.getElementById("demo34").value);
+                    //let c = parseInt(document.getElementById("demo35").value);
+                    //4 combined methods: .value + checked + querySelector + parseInt
+                    //var sum = a + b + c;
+                    //document.getElementById("demo101").innerHTML = sum;
+
+
+                    /*
+                    ARRAY - Adding items
+                    function f13() {
+                        const arrayA = [];
+                        var cboxes = document.querySelectorAll('input[type=checkbox]:checked')
+                        for (var a = 0; a < cboxes.length; a++) {
+                            arrayA.push(cboxes[a].value)
+                        }
+                        document.getElementById("demo101").innerHTML = arrayA;
+                    }
+                    */
+
+                    /*
+                    ARRAY - Total sum of all items in an array
+                    function f14() {
+                        const arrayB = [1, 2, 3, 4];
+                        let sum = 0;
+                        for (let i = 0; i < arrayB.length; i++) {
+                            sum += arrayB[i];
+                        }
+                        document.getElementById("demo102").innerHTML = sum;
+                    }
+                    */
+
+                        /*var a = document.querySelector('.demo33:checked').value;
+                        let a = 
+                        let b = 
+                        const sum = a + b;*/
+                        
+                        // checked -> input values into an array -> combine (arithmetic) all values in the array
+                        //https://stackoverflow.com/questions/47582330/javascript-checkbox-sum
+            </script>
+        </div> 
+        -->
         <br>
         <hr>
 
