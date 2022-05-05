@@ -3,15 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Examples 2</title>
+        <title>JavaScript Examples Two</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
         <header>
-            <h1 style="text-align:center">JavaScript Examples 2</h1>
+            <h1 style="text-align:center">JavaScript Examples Two</h1>
             <p>Delivery method: DOM Event - onclick + button (See DEV279x module 3)</p>
+            <a href="JSExamples.html" style="text-decoration: none;">Go to JavaScript Example One</a>
         </header>
         <hr>
+
         <div>
             <h2>21) Conditional - if, else if and else statements + prompt()</h2>
             <p>Please enter either '1' or '2' upon clicking the button below.</p>
@@ -30,8 +32,8 @@
                 }
             </script>
         </div>
-        <br>
         <hr>
+
         <div>
             <h2>22) Complex Conditional + Logical Operators </h2>
             <p>Flight tickets availability search to Honolulu in May.</p>
@@ -57,8 +59,8 @@
                 }
             </script>
         </div>
-        <br>
         <hr>
+
         <div>
             <h2>23) while Loop </h2>
             <p>Count to five and see a picture below:</p>
@@ -79,8 +81,8 @@
                 }
             </script>
         </div>
-        <br>
         <hr>
+
         <div>
             <h2>24) Combining while Loop + for loop </h2>
             <p>Count to three (under while loop) and then count to nine (under for loop)</p>
@@ -105,116 +107,183 @@
                 }
             </script>
         </div>
-        <br>
         <hr>
 
         <div>
-            <h2>xx) ADVANCED TEST </h2>
-            <p>Place your orders:</p>
-            <input name="demo33" type="checkbox" value="2000" onclick="f13()"><label>Item A - 2,000 Won</label><br>
-            <input name="demo33" type="checkbox" value="4000" onclick="f13()"><label>Item B - 4,000 Won</label><br>
-            <input name="demo33" type="checkbox" value="6000" onclick="f13()"><label>Item C - 6,000 Won</label><br>
-            <input type="checkbox"><label>Item D - 8,000 Won</label><br>
-            <input type="checkbox"><label>Item E - 10,000 Won</label><br>
-            <input type="checkbox"><label>Item F - 12,000 Won</label><br>
-            <br>
-            <!--<button type="button" onclick='f13()'> Test A </button>-->
-            <!-- <h3 id="demo101" style="color:blueviolet;"></h3> -->
-            <input readonly="readonly" type="text" name="demo101">
-            
+            <h2>25a) Three sepearated radio executions vs addEventListener</h2>
+            <p><b>Prof Kushal asked: 'Would you like to check your grades at the end of the semester?'</b></p>
+            <p>Your reply:</p>
+            <input id="demo33" type="radio" name="q1" onclick="document.getElementById('demo36').innerHTML = demo33.value;" value="Please make sure to complete the Course Evaluation Survey. Thank you.">
+            <label>Yes, please.</label><br>
+            <input id="demo34" type="radio" name="q1" onclick="document.getElementById('demo36').innerHTML = demo34.value;" value="Please sit back and relax.">
+            <label>NO!</label><br>
+            <input id="demo35" type="radio" name="q1" onclick="document.getElementById('demo36').innerHTML = demo35.value;" value="Please visit the 5th floor office for further consultation.">
+            <label>I do not understand English language.</label><br>
+            <h3 id="demo36" style="color: darkred;"></h3>
+        </div>
+        <hr>
+
+        <div>
+            <h2>25b) Three sepearated radio executions vs addEventListener</h2>
+            <p><b>Prof Kushal asked: 'Would you like to check your grades at the end of the semester?'</b></p>
+            <p>Your reply:</p>
+            <input id="demo37" type="radio" name="q2"><label>Oh yeah!</label><br>
+            <input id="demo38" type="radio" name="q2"><label>Nah, can't be bothered.</label><br>
+            <input id="demo39" type="radio" name="q2"><label>Huh? Wot?</label><br>
+            <h3 id="demo40" style="color:deepskyblue;"></h3>
             <script>
-                function f13() {
-                    var cboxes = document.getElementsByName("demo33");
-                    var sum = 0;
-                    for (var a = 0; a < cboxes.length; a++) {
-                        if (cboxes[a].checked) {
-                            sum += parseFloat(cboxes[a].value);
-                        }
-                    }
-                    document.getElementById("demo101")[0].value = sum;
-                }
-                //https://stackoverflow.com/questions/47582330/javascript-checkbox-sum
+                demo37.addEventListener("click", function(){document.getElementById("demo40").innerHTML = "Do that course evaluation for me, willya?"});
+                demo38.addEventListener("click", function(){document.getElementById("demo40").innerHTML = "Time to chillax~"});                
+                demo39.addEventListener("click", function(){document.getElementById("demo40").innerHTML = "Say hello to the 'F' grade :)"});
+                //Learn more about addEventListener in Module 3.
             </script>
         </div>
+        <hr>
 
-        <!--
         <div>
-            <h2>xx) ADVANCED: Radio input + Arithmetic Operation </h2>
-            <p>Place your orders:</p>
-            <input class="demo33" type="checkbox" value="2000"><label>Item A - 2,000 Won</label><br>
-            <input class="demo33" type="checkbox" value="4000"><label>Item B - 4,000 Won</label><br>
-            <input class="demo33" type="checkbox" value="6000"><label>Item C - 6,000 Won</label><br>
-            <input type="checkbox"><label>Item D - 8,000 Won</label><br>
-            <input type="checkbox"><label>Item E - 10,000 Won</label><br>
-            <input type="checkbox"><label>Item F - 12,000 Won</label><br>
-            <br>
-            <button type="button" onclick='f13()'> Test A </button>
-            <h3 id="demo101" style="color:blueviolet;"></h3>
-            <button type="button" onclick='f14()'> Test B </button>
-            <h3 id="demo102" style="color:blueviolet;"></h3>
-        
+            <h2>26) ARRAY - A variable type to contain a collection of values</h2>
+            <p>For example, an array of five car brand names to be stored as values in an array. (No. of elements = 5; [0][1][2][3][4])</p>
+            <p>Click the button below to show all the elements in the array:</p>
+            <h3 id="demo41" style="color:blueviolet;"></h3>
+            <button type="button" onclick='document.getElementById("demo41").innerHTML = carBrands;'> Example 26a </button>
+            <p>Click the button below to show the 3rd element in the array:</p>
+            <h3 id="demo42" style="color:cornflowerblue"></h3>
+            <button type="button" onclick='document.getElementById("demo42").innerHTML = carBrands[2];'> Example 26b </button>
             <script>
+                const carBrands = ["KIA", "Toyota", "Hyundai", "BMW", "Chevrolet"];
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>27) ARRAY + Loop - Total sum of all the values</h2>
+            <p>Example: [27, 304, 1276, 7, 443, 35.74, 67.07, 432.4]</p>
+            <p>Click the button below to calculate the total value of all the elements in the array:</p>
+            <h3 id="demo43" style="color:blueviolet;"></h3>
+            <button type="button" onclick='f13()'> Example 27 </button>
+            <script>
+                const a = [27, 304, 1276, 7, 443, 35.74, 67.07, 432.4];
                 function f13() {
-                    parseInt(document.querySelector('.demo33:checked').value);
-                    const arrayA = [];
-                    var cboxes = document.querySelectorAll('input[type=checkbox]:checked')
-                    for (var a = 0; a < cboxes.length; a++) {
-                        arrayA.push(cboxes[a].value)
+                    var value = 0;
+                    for (index = 0; index < a.length; index++) {
+                        value += a[index];
                     }
-                    document.getElementById("demo101").innerHTML = arrayA;
+                    document.getElementById("demo43").innerHTML = value;
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>28) Adding array elements via prompt() + push() methods (No Loop)</h2>
+            <p>Click the button below to input three number values into an array:</p>
+            <h3 id="demo44" style="color:darkslateblue;"></h3>
+            <button type="button" onclick='f14()'> Example 28 </button>
+            <script>
+                function f14() {
+                    let a = prompt("Please enter the 1st number:");
+                    let b = prompt("Please enter the 2nd number:");
+                    let c = prompt("Please enter the 3rd number:");
+                    const arrayA = [];
+                    arrayA.push(a);     //arrayA[arrayA.length] = a; (the length method - same result)
+                    arrayA.push(b);
+                    arrayA.push(c);
+                    document.getElementById("demo44").innerHTML = arrayA;
+                    // three pushes are fixed; Does not work if input is less than 3 times.
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>29a) Adding array elements via prompt() + push() methods (Loop)</h2>
+            <p>Click the button below to input four number values into an array:</p>
+            <h3 id="demo45" style="color:darkslateblue;"></h3>
+            <button type="button" onclick='f15()'> Example 29a </button>
+
+            <h2>29b) Total sum of all the array values with parseInt() property</h2>
+            <p>Click the button below to calculate the total value of all the elements in the array:</p>
+            <h3 id="demo46" style="color:darkslateblue;"></h3>
+            <button type="button" onclick='f16()'> Example 29b </button>
+            <script>
+                const arrayA = [];
+                function f15() {
+                    for (n = 1; n <= 4; n++) {
+                        let a = prompt("Please enter a number:");
+                        arrayA.push(a);
+                    }
+                    document.getElementById("demo45").innerHTML = arrayA;
                 }
 
-
-
-
-
-                    //let a = parseInt(document.querySelector('#demo33:checked').value);
-                    //let b = parseInt(document.querySelector('#demo34:checked').value);
-                    //let c = parseInt(document.querySelector('#demo35:checked').value);
-                    //let a = document.querySelector('#demo33:checked').value;
-                    //let a = parseInt(document.getElementById("demo33").value);
-                    //let b = parseInt(document.getElementById("demo34").value);
-                    //let c = parseInt(document.getElementById("demo35").value);
-                    //4 combined methods: .value + checked + querySelector + parseInt
-                    //var sum = a + b + c;
-                    //document.getElementById("demo101").innerHTML = sum;
-
-
-                    /*
-                    ARRAY - Adding items
-                    function f13() {
-                        const arrayA = [];
-                        var cboxes = document.querySelectorAll('input[type=checkbox]:checked')
-                        for (var a = 0; a < cboxes.length; a++) {
-                            arrayA.push(cboxes[a].value)
-                        }
-                        document.getElementById("demo101").innerHTML = arrayA;
+                function f16() {
+                    var value = 0;
+                    for (index = 0; index < arrayA.length; index++) {
+                        value += parseInt(arrayA[index]);
                     }
-                    */
-
-                    /*
-                    ARRAY - Total sum of all items in an array
-                    function f14() {
-                        const arrayB = [1, 2, 3, 4];
-                        let sum = 0;
-                        for (let i = 0; i < arrayB.length; i++) {
-                            sum += arrayB[i];
-                        }
-                        document.getElementById("demo102").innerHTML = sum;
-                    }
-                    */
-
-                        /*var a = document.querySelector('.demo33:checked').value;
-                        let a = 
-                        let b = 
-                        const sum = a + b;*/
-                        
-                        // checked -> input values into an array -> combine (arithmetic) all values in the array
-                        //https://stackoverflow.com/questions/47582330/javascript-checkbox-sum
+                    document.getElementById("demo46").innerHTML = value;
+                }
             </script>
-        </div> 
-        -->
-        <br>
+        </div>
+        <hr>
+
+        <div>
+            <h2>30) checkbox total sum value - version 1</h2>
+            <p>Place your orders:</p>
+            <input type="checkbox" value="2000" onclick="add(this)"><label>Item A - 2,000 Won</label><br>
+            <input type="checkbox" value="4000" onclick="add(this)"><label>Item B - 4,000 Won</label><br>
+            <input type="checkbox" value="6000" onclick="add(this)"><label>Item C - 6,000 Won</label><br>
+            <input type="checkbox" value="8000" onclick="add(this)"><label>Item D - 8,000 Won</label><br>
+            <input type="checkbox" value="10000" onclick="add(this)"><label>Item E - 10,000 Won</label><br>
+            <input type="checkbox" value="12000" onclick="add(this)"><label>Item F - 12,000 Won</label><br>
+            <h3>Total Price: <span id="demo47" style="color:darkred"></span></h3>
+            
+            <script>
+                var sum = 0;
+                function add(item) {
+                    if(item.checked){
+                        sum += parseInt(item.value);
+                    } else {
+                        sum -= parseInt(item.value);
+                    }
+                    document.getElementById('demo47').innerHTML = sum;
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>31) checkbox total sum value - version 2</h2>
+            <input type="checkbox" value="35" onclick="f17(this)"><label>35</label><br>
+            <input type="checkbox" value="78" onclick="f17(this)"><label>78</label><br>
+            <input type="checkbox" value="596" onclick="f17(this)"><label>596</label><br>
+            <input type="checkbox" value="224" onclick="f17(this)"><label>224</label><br>
+            <input type="checkbox" value="1795" onclick="f17(this)"><label>1795</label><br>
+            <input type="checkbox" value="3739" onclick="f17(this)"><label>3739</label><br>
+            <h3>Array elements: <span id="demo48" style="color:darkcyan;"></span></h3>
+            <p>Click the button below to calculate the total value of all the elements in the array:</p>
+            <button type="button" onclick='f18()'> Example 31 </button>
+            <h3>Total value: <span id="demo49" style="color:darkcyan;"></span></h3>
+        
+            <script>
+                const arrayB = [];
+                function f17(item) {
+                    if(item.checked){
+                        arrayB.push(item.value);
+                    } else {
+                        arrayB.pop(item.value); //pop() method to remove the last element from an array.
+                    }
+                    document.getElementById("demo48").innerHTML = arrayB;
+                }
+                
+                function f18() {
+                    var sum = 0;
+                    for (index = 0; index < arrayB.length; index++) {
+                        sum += parseInt(arrayB[index]);
+                    }
+                    document.getElementById("demo49").innerHTML = sum;
+                }
+            </script>
+        </div>
         <hr>
 
 
@@ -229,11 +298,31 @@
                 });
             </script>
         </div>
-        <br>
         <hr>
     </body>
 </html>
 
-<!--
+<!-- REFERENCES: it works!
+
+    <script>
+        //(4 combined methods: .value + checked + querySelector + parseInt)
+        //const arrayA1 = [];
+        //let a = parseInt(document.querySelector('#demo47:checked').value);
+        //let b = parseInt(document.querySelector('#demo48:checked').value);
+        //let c = parseInt(document.querySelector('#demo49:checked').value);
+        //arrayA1.push(a);
+        //arrayA1.push(b);
+        //arrayA1.push(c);
+        //document.getElementById("demo101").innerHTML = arrayA1;
+
+        //let a = parseInt(document.getElementById("demo33").value);
+        //let b = parseInt(document.getElementById("demo34").value);
+        //let c = parseInt(document.getElementById("demo35").value);
+        //var sum = a + b + c;
+        //document.getElementById("demo101").innerHTML = sum;
+
+        var a = document.querySelectorAll('.demo33:checked').value;
+        
+    </script>
 
 -->
