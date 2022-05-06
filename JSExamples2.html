@@ -512,7 +512,7 @@
 
             <h3>Total Price:</h3>
             <h3 id="demo67" style="color:darkslateblue;"></h3>
-            <button type="button" onclick='f36()'> 장바구니 </button>
+            <button type="button" onclick='f36()'> 바로구매 </button>
 
             <script>
                 const shoplist1 = document.getElementById("demo66");
@@ -562,6 +562,130 @@
                         tvalue += parseInt(arrayC[index]);
                     }
                     document.getElementById("demo67").innerHTML = tvalue;
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>39) Same as example 38 but with images</h2>
+            <section class="demo68">
+                <img src="Pics/Image006.png" class="demo69">
+                <p class="demo70">200원</p>
+                <button type="button" onclick="f37()"> 장바구니 담기 </button>
+            </section>
+            <section class="demo68">
+                <img src="Pics/Image007.png" class="demo69">
+                <p class="demo70">400원</p>
+                <button type="button" onclick="f38()"> 장바구니 담기 </button>
+            </section>
+            <section class="demo68">
+                <img src="Pics/Image008.png" class="demo69">
+                <p class="demo70">600원</p>
+                <button type="button" onclick="f39()"> 장바구니 담기 </button>
+            </section>
+            <section class="demo68">
+                <img src="Pics/Image009.png" class="demo69">
+                <p class="demo70">800원</p>
+                <button type="button" onclick="f40()"> 장바구니 담기 </button>
+            </section>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>장바구니</h3>
+            <ul id="demo71"></ul>
+            <button type="button" onclick='f41()'> Remove last item </button>
+
+            <h3>주문금액: <span id="demo72"></span>원</h3>
+            <button type="button" onclick='f42()'> 결제하기 </button>
+
+            <style>
+                .demo68 {
+                    text-align: center;
+                    width: 170px;
+                    height: 180px;
+                    border: 1px solid black;
+                    padding: 0.5%;
+                    float: left;
+                    margin-left: 1%;
+                    margin-right: 1%;
+                }
+                .demo68:hover {
+                    box-shadow: 0 0 3px 3px rgba(128, 128, 128, 0.5);
+                }
+                .demo69 {
+                    width: 160px;
+                    height: 120px;
+                    display: relative;
+                    border: 1px solid black;
+                }
+                .demo70 {
+                    font-weight: 700;
+                    margin-top: 0;
+                    margin-bottom: 4px;
+                }
+                #demo72 {
+                    color: darkmagenta;
+                    font-size: 25px;
+                }
+            </style>
+
+            <script>
+                const shoplist2 = document.getElementById("demo71");
+                const arrayD = [];
+
+                function f37() {
+                    var itemA = document.createElement("li");
+                    itemA.innerHTML = "Image006 - 200 won";
+                    shoplist2.appendChild(itemA);
+                    let ia = 200;
+                    arrayD.push(ia);
+                }
+
+                function f38() {
+                    var itemB = document.createElement("li");
+                    itemB.innerHTML = "Image007 - 400 won";
+                    shoplist2.appendChild(itemB);
+                    let ib = 400;
+                    arrayD.push(ib);
+                }
+
+                function f39() {
+                    var itemC = document.createElement("li");
+                    itemC.innerHTML = "Image008 - 600 won";
+                    shoplist2.appendChild(itemC);
+                    let ic = 600;
+                    arrayD.push(ic);
+                }
+
+                function f40() {
+                    var itemD = document.createElement("li");
+                    itemD.innerHTML = "Image009 - 800 won";
+                    shoplist2.appendChild(itemD);
+                    let id = 800;
+                    arrayD.push(id);
+                }
+
+                function f41() {
+                    shoplist2.removeChild(shoplist2.lastElementChild);
+                    arrayD.pop();
+                }
+
+                function f42() {
+                    var tvalue = 0;
+                    for (index = 0; index < arrayD.length; index++) {
+                        tvalue += parseInt(arrayD[index]);
+                    }
+                    document.getElementById("demo72").innerHTML = tvalue;
                 }
             </script>
         </div>
