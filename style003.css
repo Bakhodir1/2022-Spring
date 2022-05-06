@@ -182,3 +182,14 @@ fieldset {
     position: absolute;
 }
 /*relative; absolute; static; fixed; sticky*/
+
+.demo09 {
+    display: block;
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.demo09:hover {
+    box-shadow: 0 0 2px 2px rgba(128, 128, 128, 0.5);
+}
