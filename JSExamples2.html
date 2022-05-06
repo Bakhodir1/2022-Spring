@@ -286,6 +286,54 @@
         </div>
         <hr>
 
+        <div>
+            <h2>32a) Function - a block of code designed to perform a particular task</h2>
+            <p>Syntax: function name(parameters) {
+                //code
+                //return
+                }
+            </p>
+            <p>Invoke(call) a Function example. (Result: True or False) [Version One]</p>
+            <h3>Press the button to confirm login:</h3>
+            <button type="button" onclick='f19()'> Example 32a </button>
+            <h3 id="demo50" style="color:darkslateblue;"></h3>
+            
+            <script>
+                function f19() {
+                    var confirm1 = login();
+                    function login() {
+                        if (confirm("Login?")) {
+                            return true;
+                        } else {
+                            return false
+                        }
+                    }
+                    document.getElementById("demo50").innerHTML = confirm1;
+                }
+            </script>
+            <p>*Note: A function nested inside a function (see code)</p>
+        </div>
+        <br>
+        <div>
+            <h2>32b) Function - a block of code designed to perform a particular task</h2>
+            <p>Invoke(call) a Function example. (Result: True or False) [Version Two]</p>
+            <h3>Press the button to confirm login:</h3>
+            <button type="button" onclick='f20()'> Example 32b </button>
+            <h3 id="demo51" style="color:darkslateblue;"></h3>
+            
+            <script>
+                function f20() {
+                    if (confirm("Login?")) {
+                        return document.getElementById("demo51").innerHTML = true;
+                    } else {
+                        return document.getElementById("demo51").innerHTML = false;
+                    }
+                }
+            </script>
+            <p>*Note: No function nested inside a function (see code)</p>
+        </div>
+        <hr>
+
 
         <div>
             <h2>xx) Mouseover Event </h2>
