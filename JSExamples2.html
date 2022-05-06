@@ -192,6 +192,7 @@
                     // three pushes are fixed; Does not work if input is less than 3 times.
                 }
             </script>
+            <p>*Note: The pop() method can be used to remove the last element from an array.</p>
         </div>
         <hr>
 
@@ -334,6 +335,237 @@
         </div>
         <hr>
 
+        <div>
+            <h2>33) DOM - Methods of accessing elements</h2>
+            <h4>*Note: A NodeList object is a list (collection) of nodes extracted from a document. NodeList items can only be accessed by their index number.</h4>
+            <h4>*Note: Methods such as getElementsByClassName and querySelectorAll, extract nodes.</h4>
+            <p class="cA" id="demo52">This is class A student 52.</p>
+            <p class="cB" id="demo53">This is class B student 53.</p>
+            <p class="cB" id="demo54">This is class B student 54.</p>
+            <p class="cB" id="demo55">This is class B student 55.</p>
+            <p class="cA" id="demo56">This is class A student 56.</p>
+            <p class="cB" id="demo57">This is class B student 57.</p>
+
+            <h3>Click to 'red' the student 53 of class B (document.getElementById):</h3>
+            <button type="button" onclick='document.getElementById("demo53").style = "color:red";'> Example 33a </button>
+
+            <h3>Click to 'blue' the student 55 of class B (document.querySelector):</h3>
+            <button type="button" onclick='document.querySelector("#demo55").style = "color:blue";'> Example 33b </button>
+
+            <h3>How many students are there in class A? (document.getElementsByClassName):</h3>
+            <button type="button" onclick='f21()'> Example 33c </button>
+            <h3 id="demo58" style="color:brown;"></h3>
+
+            <h3>Click to highlight the 4th student of class B (document.getElementsByClassName + Index):</h3>
+            <button type="button" onclick='document.getElementsByClassName("cB")[3].style = "background-color:yellow";'> Example 33d </button>
+
+            <h3>How many students are there in class B? (document.querySelectorAll):</h3>
+            <button type="button" onclick='f22()'> Example 33e </button>
+            <h3 id="demo59" style="color:darkblue;"></h3>
+
+            <h3>Click to highlight the 2nd student of class B & the 1st student of class A (document.querySelectorAll + Index):</h3>
+            <button type="button" onclick='f22a()'> Example 33f </button>
+            
+            <script>
+                function f21() {
+                    var nodelist01 = document.getElementsByClassName('cA');
+                    document.getElementById("demo58").innerHTML = nodelist01.length;
+                }
+
+                function f22() {
+                    var nodelist02 = document.querySelectorAll('.cB');
+                    document.getElementById("demo59").innerHTML = nodelist02.length;
+                }
+
+                function f22a() {
+                    document.querySelectorAll(".cB")[1].style = "background-color:pink";
+                    document.querySelectorAll(".cA")[0].style = "background-color:pink";
+                }               
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>34) Obtaining values from SELECT & OPTION</h2>
+            <h3>Select an item to purchase:</h3>
+            <select onchange="f23()" id="demo60">
+                <option selected>Choose below</option>
+                <option value="2200">참치김밥 (2200원)</option>
+                <option value="5000">담배 (5000원)</option>
+                <option value="2000">테라 맥주 500ML (2000원)</option>
+                <option value="3000">처음처럼 소주 (3000원)</option>
+            </select>
+            <h3 id="demo61" style="color:darkslateblue;"></h3>
+            
+            <script>
+                function f23() {
+                    var price1 = document.getElementById("demo60").value;
+                    document.getElementById("demo61").innerHTML = price1 + "원입니다.";
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>35) DOM - Accessing the children of an element</h2>
+            <h3>My Shopping list:</h3>
+            <ol id="demo62">
+                <li>참치김밥 (2200원)</li>
+                <li>담배 (5000원)</li>
+                <li>테라 맥주 500ML (2000원)</li>
+                <li>처음처럼 소주 (3000원)</li>
+            </ol>
+            
+            <h4>No. of items in my shopping list:</h4>
+            <h3 id="demo63" style="color:darkslateblue;"></h3>
+            <button type="button" onclick='f24()'> Example 35a </button>
+
+            <h4>Click below to highlight the important items to buy (use of indexes):</h4>
+            <button type="button" onclick='f25()'> Example 35b </button>
+                        
+            <script>
+                function f24() {
+                    let count1 = document.getElementById("demo62").children.length;
+                    document.getElementById("demo63").innerHTML = count1;
+                }
+
+                function f25() {
+                    const items1 = document.getElementById("demo62").children;
+                    items1[1].style.backgroundColor = "pink";
+                    items1[3].style.backgroundColor = "pink";
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>36) createElement() + appendChild() + removeChild()</h2>
+            <h3>Click the buttons below to create a new listed item (add items A-C):</h3>
+            <button type="button" onclick="f26()"> Item A </button>
+            <button type="button" onclick="f27()"> Item B </button>
+            <button type="button" onclick="f28()"> Item C </button>
+            <ul id="demo64"></ul>
+            <h3>Click the button below to delete the last child element:</h3>
+            <button type="button" onclick='f29()'> Remove item </button>
+
+            <p>*Note: there are several ways to selectively target which child to remove such as the first one, etc.</p>
+
+            <script>
+                const ulist = document.getElementById("demo64");
+
+                function f26() {
+                    var itemA = document.createElement("li");
+                    itemA.innerHTML = "Item A";
+                    ulist.appendChild(itemA);
+                }
+
+                function f27() {
+                    var itemB = document.createElement("li");
+                    itemB.innerHTML = "Item B";
+                    ulist.appendChild(itemB);
+                }
+
+                function f28() {
+                    var itemC = document.createElement("li");
+                    itemC.innerHTML = "Item C";
+                    ulist.appendChild(itemC);
+                }
+
+                function f29() {
+                    ulist.removeChild(ulist.lastElementChild);
+
+                    //Alternative method to remove the first child:
+                    //var ulist1 = ulist.children;
+                    //var del = ulist.removeChild(ulist1[0]);
+                    //del.innerHTML;
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div id="demo65">
+            <h2>37) createElement() with images</h2>
+            <h3>Click the button below to create a new image:</h3>
+            <button type="button" onclick='f30()'> Example 37 </button>
+
+            <script>
+                var div1 = document.getElementById("demo65");
+                function f30() {
+                    let newpic1 = document.createElement("img");
+                    newpic1.src = "Pics/image007.png";
+                    div1.appendChild(newpic1);
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>38) Big Combo: createElement() + appendChild() + removeChild() + array push() & pop() + array sum</h2>
+            <h3>Select your shopping items A-D:</h3>
+            <button type="button" onclick="f31()"> Item A </button>
+            <button type="button" onclick="f32()"> Item B </button>
+            <button type="button" onclick="f33()"> Item C </button>
+            <button type="button" onclick="f34()"> Item D </button>
+            <ul id="demo66"></ul>
+            <h3>Click the button below to remove the last item from the shopping list:</h3>
+            <button type="button" onclick='f35()'> Remove item </button>
+
+            <h3>Total Price:</h3>
+            <h3 id="demo67" style="color:darkslateblue;"></h3>
+            <button type="button" onclick='f36()'> 장바구니 </button>
+
+            <script>
+                const shoplist1 = document.getElementById("demo66");
+                const arrayC = [];
+
+                function f31() {
+                    var itemA = document.createElement("li");
+                    itemA.innerHTML = "Item A - 200 won";
+                    shoplist1.appendChild(itemA);
+                    let ia = 200;
+                    arrayC.push(ia);
+                }
+
+                function f32() {
+                    var itemB = document.createElement("li");
+                    itemB.innerHTML = "Item B - 400 won";
+                    shoplist1.appendChild(itemB);
+                    let ib = 400;
+                    arrayC.push(ib);
+                }
+
+                function f33() {
+                    var itemC = document.createElement("li");
+                    itemC.innerHTML = "Item C - 600 won";
+                    shoplist1.appendChild(itemC);
+                    let ic = 600;
+                    arrayC.push(ic);
+                }
+
+                function f34() {
+                    var itemD = document.createElement("li");
+                    itemD.innerHTML = "Item D - 800 won";
+                    shoplist1.appendChild(itemD);
+                    let id = 800;
+                    arrayC.push(id);
+                }
+
+                function f35() {
+                    shoplist1.removeChild(shoplist1.lastElementChild);
+                    arrayC.pop();
+                }
+
+                function f36() {
+                    //document.getElementById("demo222").innerHTML = arrayC;
+                    var tvalue = 0;
+                    for (index = 0; index < arrayC.length; index++) {
+                        tvalue += parseInt(arrayC[index]);
+                    }
+                    document.getElementById("demo67").innerHTML = tvalue;
+                }
+            </script>
+        </div>
+        <hr>
 
         <div>
             <h2>xx) Mouseover Event </h2>
@@ -351,6 +583,7 @@
 </html>
 
 <!-- REFERENCES: it works!
+    <button type="button" onclick=''> 장바구니 </button>
 
     <script>
         //(4 combined methods: .value + checked + querySelector + parseInt)
