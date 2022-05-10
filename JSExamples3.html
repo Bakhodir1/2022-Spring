@@ -5,6 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JavaScript Examples Three</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <style>
+            #demo99 {
+                width: 200 px;
+                height: 200 px;
+                border: 1px solid black;
+                background: red;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -19,11 +28,20 @@
         <div>
             <h2>41) addEventListener - The mouseover Event + Mouseout + clickhold</h2>
             <p>An error message will be displayed when the mouse cursor touches the picture area below.</p>
-            <img id="demo99" src="Pics/Image008.png" style="width: 160px; height: 120px;">
-            <h3 id="demo100" style="color:red;"></h3>
+            <!-- <img id="demo99" src="Pics/Image008.png" style="width: 160px; height: 120px;"> -->
+            <h4></h4>
+            <div id="demo99"></div>
+            
             <script>
-                demo99.addEventListener("mouseover", function(){
-                    demo100.innerHTML = "ERROR";
+                demo99.addEventListener ("mouseover", function(){
+                    demo99.style = 'background-color: black';
+                    demo100.innerHTML = 'ERROR';
+                    demo100.style.cssText = 'color:red';
+                });
+
+                demo99.addEventListener("mouseout", function(){
+                    demo100.innerHTML = 'WOW';
+                    demo100.style.cssText = 'color:blue';
                 });
             </script>
         </div>
