@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Examples Two</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align:center">JavaScript Examples Three</h1>
+            <p>Delivery method: DOM Event - onclick + button (See DEV279x module 3)</p>
+            <a href="JSExamples.html" style="text-decoration: none;">Go to JavaScript Examples One</a>
+            <br>
+            <a href="JSExamples2.html" style="text-decoration: none;">Go to JavaScript Examples Two</a>
+        </header>
+        <hr>
+
+        <div>
+            <h2>41) addEventListener - The mouseover Event + Mouseout + clickhold</h2>
+            <p>An error message will be displayed when the mouse cursor touches the picture area below.</p>
+            <img id="demo99" src="Pics/Image008.png" style="width: 160px; height: 120px;">
+            <h3 id="demo100" style="color:red;"></h3>
+            <script>
+                demo99.addEventListener("mouseover", function(){
+                    demo100.innerHTML = "ERROR";
+                });
+            </script>
+        </div>
+        <hr>
+    </body>
+</html>

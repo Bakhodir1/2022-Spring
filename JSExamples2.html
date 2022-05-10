@@ -10,7 +10,9 @@
         <header>
             <h1 style="text-align:center">JavaScript Examples Two</h1>
             <p>Delivery method: DOM Event - onclick + button (See DEV279x module 3)</p>
-            <a href="JSExamples.html" style="text-decoration: none;">Go to JavaScript Example One</a>
+            <a href="JSExamples.html" style="text-decoration: none;">Go to JavaScript Examples One</a>
+            <br>
+            <a href="JSExamples3.html" style="text-decoration: none;">Go to JavaScript Examples Three</a>
         </header>
         <hr>
 
@@ -590,17 +592,6 @@
                 <button type="button" onclick="f40()"> 장바구니 담기 </button>
             </section>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <h3>장바구니</h3>
             <ul id="demo71"></ul>
             <button type="button" onclick='f41()'> Remove last item </button>
@@ -610,12 +601,13 @@
 
             <style>
                 .demo68 {
+                    display: inline-block;
+                    position: relative;
                     text-align: center;
                     width: 170px;
                     height: 180px;
                     border: 1px solid black;
                     padding: 0.5%;
-                    float: left;
                     margin-left: 1%;
                     margin-right: 1%;
                 }
@@ -692,14 +684,131 @@
         <hr>
 
         <div>
-            <h2>xx) Mouseover Event </h2>
-            <p>An error message will be displayed when the mouse cursor touches the picture area below.</p>
-            <img id="demo99" src="Pics/Image008.png" style="width: 160px; height: 120px;">
-            <h3 id="demo100" style="color:red;"></h3>
+            <h2>40a) Moving elements: insertBefore() + .firstElementChild / .lastElementChild</h2>
+            <p>Syntax: element.insertBefore(newChild, existingChild);</p>
+            <section class="demo73">
+                <p class="demo74">Sorting Area</p>
+                <ul id="list0">
+                    <li>chicken soup</li>
+                    <li>yoga</li>
+                    <li>rectangle</li>
+                    <li>pizza</li>
+                    <li>hiking</li>
+                    <li>deep fried Mars bar</li>
+                    <li>jigsaw puzzle</li>
+                    <li>octagon</li>
+                    <li>noodles</li>
+                    <li>dodecagon</li>
+                </ul>
+            </section>
+            <section class="demo73">
+                <p class="demo74">SHAPES</p>
+                <ul class="demo75" id="list1"></ul>
+            </section>
+            <section class="demo73">
+                <p class="demo74">HOBBIES</p>
+                <ul class="demo75" id="list2"></ul>
+            </section>
+            <section class="demo73">
+                <p class="demo74">FOOD</p>
+                <ul class="demo75" id="list3"></ul>
+            </section>
+            <br>
+            <p>Sort the items in the above list into its respective catogory:</p>
+            <button type="button" onclick='f43()'> SHAPES </button>
+            <button type="button" onclick='f43a()'> Return item to Sorting Area </button><br><br>
+            <button type="button" onclick='f44()'> HOBBIES </button>
+            <button type="button" onclick='f44a()'> Return item to Sorting Area </button><br><br>
+            <button type="button" onclick='f45()'> FOOD </button>
+            <button type="button" onclick='f45a()'> Return item to Sorting Area </button><br>         
+
+            <style>
+                .demo73 {
+                    display: inline-block;
+                    position: relative;
+                    width: 180px;
+                    height: fit-content;
+                    border: 1px solid black;
+                    margin-left: 1.5%;
+                    margin-right: 1.5%;
+                }
+                .demo74 {
+                    text-align: center;
+                    font-weight: 700;
+                    text-decoration: underline;
+                    margin-top: 4px;
+                    margin-bottom: 0px;
+                }
+                .demo75 {
+                    list-style-type: circle;
+                    margin-top: 4px;
+                }
+                #list0 {
+                    text-align: left;
+                    margin-top: 4px;
+                }
+                button:hover {
+                    box-shadow: 0 0 1px 1px rgba(128, 128, 128, 0.5);
+                }
+            </style>
+
+            <script>                
+                function f43() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list1");
+                    list1.insertBefore(a, null);
+                }
+                // null = to insert the child at the end of the list
+                // list1.insertBefore(a, b.children[0]); --> to insert the child at the start of the list
+                function f43a() {
+                    const a = document.getElementById("list1").lastElementChild;
+                    const b = document.getElementById("list0");
+                    list0.insertBefore(a, b.children[0]);
+                }
+                function f44() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list2");
+                    list2.insertBefore(a, null);
+                }
+                function f44a() {
+                    const a = document.getElementById("list2").lastElementChild;
+                    const b = document.getElementById("list0");
+                    list0.insertBefore(a, b.children[0]);
+                }
+                function f45() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list3");
+                    list3.insertBefore(a, null);
+                }
+                function f45a() {
+                    const a = document.getElementById("list3").lastElementChild;
+                    const b = document.getElementById("list0");
+                    list0.insertBefore(a, b.children[0]);
+                }
+            </script>
+            <br>
+            <h2>40b) Moving elements: appendChild() + .firstElementChild / .lastElementChild</h2>
+            <p>Same effects with the appendChild method:</p>
+            <button type="button" onclick='f46()'> SHAPES </button>
+            <button type="button" onclick='f47()'> HOBBIES </button>
+            <button type="button" onclick='f48()'> FOOD </button>         
+
             <script>
-                demo99.addEventListener("mouseover", function(){
-                    demo100.innerHTML = "ERROR";
-                });
+                function f46() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list1");
+                    list1.appendChild(a, b.children);
+                }
+                function f47() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list2");
+                    list2.appendChild(a, b.children);
+                }
+                function f48() {
+                    const a = document.getElementById("list0").firstElementChild;
+                    const b = document.getElementById("list3");
+                    list3.appendChild(a, b.children);
+                }
             </script>
         </div>
         <hr>
