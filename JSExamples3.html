@@ -240,5 +240,84 @@
             </script>
         </div>
         <hr>
+
+        <div>
+            <h2>45) CSS Transitions</h2>
+            <p style="margin-bottom: 0px;">Hover mouse cursor on top of the thumbnail images below:</p>
+            <div id="demo91">
+                <img class="demo92" id="demo93" src="Pics/Image001.png" style="left: 0px;">
+                <img class="demo92" id="demo94" src="Pics/Image002.png" style="left: 80px;">
+                <img class="demo92" id="demo95" src="Pics/Image003.png" style="left: 160px;">
+                <img class="demo92" id="demo96" src="Pics/Image004.png" style="left: 240px;">
+                <img class="demo92" id="demo97" src="Pics/Image005.png" style="left: 320px;">
+                <img class="demo92" id="demo98" src="Pics/Image006.png" style="left: 400px;">
+                <img class="demo92" id="demo99" src="Pics/Image007.png" style="left: 480px;">
+                <img class="demo92" id="demo100" src="Pics/Image008.png" style="left: 560px;">
+                <img class="demo92" id="demo101" src="Pics/Image009.png" style="left: 640px;">
+                <img class="demo92" id="demo102" src="Pics/Image010.png" style="left: 720px;">
+            </div>
+            <style>
+                #demo91 {height: 210px;}
+                #demo91::after {display: table; content: ""; clear: both;}
+                .demo92 {
+                    float: left;
+                    margin: 1%;
+                    position: absolute;
+                    z-index: 0;
+                    
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    width: 70px;
+                    height: 60px;
+                    transition: width 0.6s, height 0.6s;
+                    transition-timing-function: ease-in-out;
+                }
+                .demo92:hover {
+                    box-shadow: 0 0 3px 3px rgba(128, 128, 128, 0.5);
+                    width: 240px;
+                    height: 200px;
+                }
+                #demo93:hover {z-index: 1;}
+                #demo94:hover {z-index: 1;}
+                #demo95:hover {z-index: 1;}
+                #demo96:hover {z-index: 1;}
+                #demo97:hover {z-index: 1;}
+                #demo98:hover {z-index: 1;}
+                #demo99:hover {z-index: 1;}
+                #demo100:hover {z-index: 1;}
+                #demo101:hover {z-index: 1;}
+                #demo102:hover {z-index: 1;}
+            </style>
+        </div>
+        <hr>
+
+        <div>
+            <h2>46) Form Validation Box - A login example</h2>
+            <p>Input the following details: Student number = 202212345; Password = solbridge</p>
+            <form action="Actionpageexample.html" onsubmit="return f59()" target="_blank" method="post">
+                <fieldset id="demo103">
+                    <p>STUDENT NO.: <span><input type="text" id="studno"></span></p>
+                    <p>PASSWORD: <span><input type="text" id="studpw"></span></p>
+                    <input type="submit" value="로그인">
+                </fieldset>
+                <h3 id="demo104" hidden>Login details incorrect</h3>
+            </form>
+            <style>
+                #demo103 {width: fit-content;text-align: center;}
+                #demo104 {color: darkred;}
+            </style>
+            <script>
+                function f59(){
+                    if(studno.value == 202212345 && studpw.value == "solbridge"){
+                        alert("Login Successful!!!");
+                        return true;
+                    }else{
+                        demo104.style.display = "block";
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+        <hr>
     </body>
 </html>
