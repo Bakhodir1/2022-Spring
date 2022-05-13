@@ -319,5 +319,182 @@
             </script>
         </div>
         <hr>
+
+        <div>
+            <h2>47) Slideshow with fading effects (@keyframes)</h2>
+            <p style="margin-bottom: 0px;">A basic setup of a slideshow gallery with fading effect using @keyframe animation</p>
+            <div class="demo105">
+                <img src="Pics/image001.png" class="demo106 fade">
+                <img src="Pics/image002.png" class="demo106 fade">
+                <img src="Pics/Image003.png" class="demo106 fade">
+                <img src="Pics/Image004.png" class="demo106 fade">
+                <img src="Pics/Image005.png" class="demo106 fade">
+                <img src="Pics/Image006.png" class="demo106 fade">
+                <img src="Pics/Image007.png" class="demo106 fade">
+                <img src="Pics/image008.png" class="demo106 fade">
+                <img src="Pics/Image009.png" class="demo106 fade">
+                <img src="Pics/Image010.png" class="demo106 fade">
+                <button class="bLeft" onclick="moveone(-1)">&#10094;</button>
+                <button class="bRight" onclick="moveone(+1)">&#10095;</button>
+            </div>
+
+            <style>
+                .demo105 {
+                    position: relative;
+                    margin: auto;
+                    width: fit-content;
+                    height: fit-content;
+                }
+                .demo106 {display: none;}
+                /* INFO: position absolute allows overlapping of elements */
+                .bLeft {
+                    color: black;
+                    background-color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border: none;
+                    cursor: pointer;
+                    padding: 10px 16px;
+                    width: auto;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    white-space: nowrap; 
+                    /*Text continues on the same line until a <br> tag is encountered*/
+                    transition: 0.8s ease;
+                    
+                    position: absolute;
+                    top: 45%;
+                    left: 0%;
+                }
+                .bRight {
+                    color: black;
+                    background-color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border: none;
+                    cursor: pointer;
+                    padding: 10px 16px;
+                    width: auto;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: 0.8s ease;
+                        
+                    position: absolute;
+                    top: 45%;
+                    right: 0%;
+                }
+                .bLeft:hover, .bRight:hover {
+                    color: white;
+                    background-color: black;
+                    text-decoration: none;
+                }
+                .fade {
+                    animation-name: fadingeffect;
+                    animation-duration: 2.0s;
+                }
+                @keyframes fadingeffect {
+                    from {opacity: 0.4}
+                    to {opacity: 1}
+                }
+            </style>
+
+            <script>
+                let showindex = 1;
+                gallery(showindex); /*SHOW THE 1ST PICTURE*/
+                    
+                function moveone(n) { /*CLICK BUTTON (FORWARD AND BACKWARD)*/
+                    gallery(showindex += n);
+                }
+                    
+                function gallery(n) { /*SHOW THE 1ST PICTURE*/
+                    var i;
+                    var x = document.getElementsByClassName("demo106");
+                    if (n > x.length) {showindex = 1} /*SET showindex back to 1*/
+                    if (n < 1) {showindex = x.length}; /*SET showindex to number of elements(10)*/
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[showindex-1].style.display = "block";
+                }
+            </script>
+        </div>
+        <hr>
+
+        <div>
+            <h2>48) Automatic Slideshow</h2>
+            <div class="demo107">
+                <div class="demo108"><img src="Pics/image001.png"></div>
+                <div class="demo108"><img src="Pics/image002.png"></div>
+                <div class="demo108"><img src="Pics/Image003.png"></div>
+                <div class="demo108"><img src="Pics/Image004.png"></div>
+                <div class="demo108"><img src="Pics/Image005.png"></div>
+                <div class="demo108"><img src="Pics/Image006.png"></div>
+                <div class="demo108"><img src="Pics/Image007.png"></div>
+                <div class="demo108"><img src="Pics/Image008.png"></div>
+                <div class="demo108"><img src="Pics/Image009.png"></div>
+                <div class="demo108"><img src="Pics/Image010.png"></div>
+
+                <div style="text-align:center">
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span>
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span>
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span> 
+                    <span class="bigdot"></span>
+                    <span class="bigdot"></span>
+                </div>
+            </div>
+
+            <style>
+                .demo107 {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: fit-content;
+                }
+                .demo108 {
+                    border: 1px solid black;
+                    margin-bottom: 10px;
+                }
+                .bigdot {
+                    height: 18px;
+                    width: 18px;
+                    margin: 4px 4px;
+                    background-color: gray;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+                .bigdot1 {background-color: black;}
+            </style>
+
+            <script>
+                let autoIndex = 0;
+                gallery1();
+
+                function gallery1() {
+                    let n;
+                    let a = document.getElementsByClassName("demo108");
+                    let b = document.getElementsByClassName("bigdot");
+                    for (n = 0; n < a.length; n++) {
+                        a[n].style.display = "none";  
+                    }
+                    autoIndex++;
+                    if (autoIndex > a.length) {autoIndex = 1}    
+                    for (n = 0; n < b.length; n++) {
+                        b[n].className = b[n].className.replace(" bigdot1", "");
+                    }
+
+                    a[autoIndex-1].style.display = "block";
+                    b[autoIndex-1].className += " bigdot1";
+                    setTimeout(gallery1, 2000); // Change image every 2 seconds
+                }
+                </script>
+            <hr>
+        </div>
     </body>
 </html>
